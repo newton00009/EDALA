@@ -1,0 +1,544 @@
+---
+title: "EDA LA 1NT19IS098 1NT19IS160"
+author: "Nilesh Verma & Srajan Gupta"
+date: '2022-06-24'
+output: pdf_document
+---
+
+".....LIST OF COMMANDS EXECUTED ON OUR DATASET......"
+
+
+```{r}
+help(mean)
+```
+
+
+
+```{r}
+require(lattice)
+```
+
+
+```{r}
+example(histogram)
+
+```
+
+
+```{r}
+x = c(8, 6, 7, 5, 3, 0, 9)
+```
+
+
+```{r}
+x
+```
+
+
+```{r}
+names = c("Owen", "Luke", "Anakin", "Leia", "Jacen", "Jaina")
+names
+```
+```{r}
+heartDeck = c(rep(1, 13), rep(0, 39))
+heartDeck
+```
+```{r}
+y = seq(7, 41, 1.5)
+y
+```
+```{r}
+data(iris)
+names(iris)
+```
+```{r}
+dim(iris)
+```
+
+
+```{r}
+str(iris)
+
+```
+```{r}
+View(iris)
+
+```
+
+
+```{r}
+data(iris)
+data(faithful)
+data(Puromycin)
+data(LakeHuron)
+ls()
+```
+```{r}
+ newVector = 1:12
+ls()
+```
+
+
+```{r}
+rm(faithful)
+ls()
+```
+```{r}
+data(faithful)
+hist(faithful$eruptions)
+hist(faithful$eruptions, n=15)
+hist(faithful$eruptions, breaks=seq(1.5,5.25,.25), col="red")
+hist(faithful$eruptions, freq=F, n=15, main="Histogram of Old Faithful Eruption Times", xlab="Duration (mins)")
+
+```
+```{r}
+
+require(lattice)
+data(iris)
+histogram(iris$Sepal.Length, breaks=seq(4,8,.25))
+```
+
+
+```{r}
+lifexp<-read.csv(file.choose())
+```
+
+
+```{r}
+lifexp
+```
+```{r}
+names(lifexp)
+```
+```{r}
+mean(lifexp$Life.expectancy, na.rm = T)
+```
+
+
+```{r}
+median(lifexp$Life.expectancy, na.rm = T)
+```
+```{r}
+summary(lifexp$Life.expectancy)
+```
+
+```{r}
+sd(lifexp$Life.expectancy, na.rm = T)
+```
+
+```{r}
+var(lifexp$Life.expectancy, na.rm = T)
+```
+
+```{r}
+ quantile(lifexp$Life.expectancy, probs=seq(0, 1, .2), na.rm=T)
+```
+
+```{r}
+firstTwentyIntegers = 1:20
+```
+```{r}
+sum(firstTwentyIntegers)
+
+```
+```{r}
+manyRolls = sample(1:6, 100, replace=T)
+sixFreq = sum(manyRolls == 6)
+sixFreq / 100
+
+```
+
+```{r}
+table(lifexp$Year)
+```
+
+
+```{r}
+table(lifexp$Entity)
+```
+```{r}
+ table(lifexp$Entity,lifexp$Year)
+```
+```{r}
+xtabs(~Life.expectancy, data=lifexp)
+```
+```{r}
+barplot(table(lifexp$Entity), horiz=T)
+```
+```{r}
+boxplot(lifexp$Life.expectancy)
+
+```
+```{r}
+data(faithful)
+plot(waiting~eruptions,data=faithful)
+plot(waiting~eruptions,data=faithful,cex=.5)
+plot(waiting~eruptions,data=faithful,pch=6)
+plot(waiting~eruptions,data=faithful,pch=19)
+plot(waiting~eruptions,data=faithful,cex=.5,pch=19,col="blue")
+plot(waiting~eruptions, data=faithful, cex=.5, pch=19, col="blue", main="Old Faithful Eruptions",
+ylab="Wait time between eruptions", xlab="Duration of eruption")
+```
+```{r}
+sample(c("Heads","Tails"), size=1)
+```
+
+```{r}
+sample(c("Heads","Tails"), size=10, replace=T)
+```
+
+```{r}
+ sample(c(0, 1), 10, replace=T)
+```
+
+```{r}
+replicate(5, sample(c("Heads","Tails"), 2, replace=T))
+```
+
+```{r}
+ dbinom(0, 5, .5)
+```
+
+```{r}
+ dbinom(0:5, 5, .5)
+```
+
+```{r}
+sum(dbinom(0:2, 5, .5))
+```
+
+```{r}
+pbinom(2, 5, .5)
+```
+
+```{r}
+ getwd()
+
+```
+```{r}
+ savedata = c(9, 2, 4, 6, 5, 7, 9, 2, 1, 1, 7)
+savedata
+```
+
+
+```{r}
+ mow=c(12,15,17,11,15)
+unmow=c(8,9,7,9)
+```
+
+
+```{r}
+data7=c(23.0,17.0,12.5,11.0,17.0,12.0,14.5,9.0,11.0,9.0,12.5,14.5,17.0,8.0,21.0)
+```
+
+```{r}
+write(data7, file = 'C:/Users/Nilesh/Desktop/data7.txt', sep = ',')
+
+```
+
+
+```{r}
+ data1=c(3,5,7,5,3,2,6,8,5,6,9)
+max(data1)
+```
+```{r}
+which(data1 == max(data1))
+```
+
+```{r}
+data1[seq(1, length(data1), 2)]
+```
+
+```{r}
+mf
+```
+
+```{r}
+mf[3,3]
+```
+
+```{r}
+mf[3,1:4]
+```
+
+```{r}
+mf[,1]
+```
+
+```{r}
+mf[c(1,3,5,7),]
+```
+
+```{r}
+mf[c(1,3,5,7), 'Algae']
+```
+
+```{r}
+bird
+```
+
+```{r}
+ class(bird)
+```
+```{r}
+bird[2,]
+```
+
+```{r}
+ bird[c('Robin', 'Blackbird'),]
+```
+
+```{r}
+ test.matrix
+```
+
+```{r}
+sort(bird)
+```
+
+```{r}
+ grass2
+```
+
+```{r}
+sort(grass2[1,])
+```
+
+```{r}
+str(my.list)
+```
+
+```{r}
+my.list[1]
+
+```
+
+```{r}
+fw
+```
+
+```{r}
+fw$speed[1:4]
+```
+```{r}
+head(mf)
+```
+
+```{r}
+summary(grass)
+```
+
+```{r}
+sites = c('Taw', 'Torridge', 'Ouse', 'Exe', 'Lyn', 'Brook', 'Ditch', 'Fal')
+```
+
+
+```{r}
+species = c('Bbird', 'C.Finch', 'Gt.Tit', 'Sparrow', 'Robin', 'Thrush')
+ habitats = c('Gdn', 'Hedge', 'Park', 'Field', 'Wood')
+```
+
+```{r}
+dimnames(bird) = list(species, habitats)
+```
+```{r}
+ bird
+```
+
+```{r}
+ dimnames(bird) = list(c('Bbird', 'C.Finch', 'Gt.Tit', 'Sparrow', 'Robin',
+'Thrush'), c('Gdn', 'Hedge', 'Park', 'Field', 'Wood'))
+```
+
+```{r}
+fw.t = t(fw)
+fw.t
+```
+
+```{r}
+grass.list = list(mow, unmow, data3, data7, data8)
+ names(grass.list) = c('mow', 'unmow', 'data3', 'data7', 'months')
+```
+
+```{r}
+sample1 = c(5,6,9,12,8)
+ sample2 = c(7,9,13,10,NA)
+ my.frame = data.frame(sample1, sample2)
+ my.frame
+```
+
+```{r}
+ response = c(5,6,9,12,8,7,9,13,10)
+predictor = c(rep('open',5), rep('closed', 4))
+my.frame2 = data.frame(response, predictor)
+my.frame2
+```
+```{r}
+cmat = cbind(sample1, sample2)
+cmat
+```
+
+```{r}
+rmat = rbind(sample1, sample2)
+rmat
+```
+
+```{r}
+ mix.mat[,1] = as.numeric(mix.mat[,1])
+mix.mat
+```
+
+```{r}
+mat
+```
+
+```{r}
+mat2frame = as.data.frame(mat)
+mat2frame
+```
+
+```{r}
+ yr.matrix
+```
+
+```{r}
+yr.frame = as.data.frame(yr.matrix)
+yr.frame
+```
+
+```{r}
+frame.list = as.list(mf)
+frame.list
+```
+```{r}
+yr.list = as.list(as.data.frame(yr.matrix))
+```
+```{r}
+a.list
+```
+
+```{r}
+a.frame = data.frame(a.list)
+ str(a.frame)
+
+```
+
+```{r}
+md
+```
+
+```{r}
+for(i in 1:length(md)) md[i] = median(data2[1:i])
+md
+```
+
+```{r}
+md = seq_along(data2)
+for(i in 1:length(md)) md[i] = sd(data2[1:i])
+md
+```
+```{r}
+rowMeans(fw)
+
+```
+
+```{r}
+rowSums(fw)
+```
+
+```{r}
+colMeans(mf)
+```
+
+
+```{r}
+apply(fw, 1, mean, na.rm = TRUE)
+```
+```{r}
+lapply(grass.l, mean, na.rm = TRUE)
+```
+```{r}
+sapply(grass.l, mean, na.rm = TRUE)
+```
+
+```{r}
+fw
+
+```
+
+```{r}
+pw.tab = with(pw, table(height, water))
+pw.tab
+```
+```{r}
+with(pw, ftable(height, plant, water))
+```
+```{r}
+prop.table(bird, margin = 1)
+```
+
+```{r}
+hist(data2)
+```
+```{r}
+ hist(data2, breaks = c(2,4,5,6,9))
+```
+```{r}
+dens = density(data2)
+dens
+```
+
+```{r}
+plot(density(data2))
+```
+```{r}
+hist(data2, freq = F, col = 'gray85')
+ lines(density(data2), lty = 2)
+ lines(density(data2, k = 'rectangular'))
+```
+```{r}
+rnorm(30, mean = 8, sd = 1)
+```
+
+```{r}
+hist(data2.norm, freq = F, border = 'gray50', main = 'Comparing two
+distributions', xlab = 'Data2 size classes')
+ lines(density(data2), lwd = 2)
+```
+
+```{r}
+rpois(50, lambda = 10)
+```
+
+```{r}
+runif(10, min = 0, max = 10)
+```
+
+```{r}
+RNGkind()
+```
+
+```{r}
+data2[data2 > 5]
+```
+
+```{r}
+head(iris)
+```
+
+```{r}
+iris
+```
+
+```{r}
+shapiro.test(rpois(100, lambda = 5))
+```
+```{r}
+tapply(grass3$rich, grass3$graze, shapiro.test)
+```
+
+
+
+
+
+
